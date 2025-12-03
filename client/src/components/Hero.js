@@ -30,13 +30,13 @@ const Hero = ({ scrollToSection }) => {
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
               
-              <button
+              {/* <button
                 onClick={() => scrollToSection('contact')}
                 className="border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 flex items-center gap-3"
               >
                 <Play size={20} />
                 <span>Watch Demo</span>
-              </button>
+              </button> */}
             </div>
             
             <div className="flex items-center space-x-8 text-gray-600">
