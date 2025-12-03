@@ -71,8 +71,8 @@ const Contact = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Sales Team</h3>
               <p className="text-gray-600 mb-4">For demos, pricing, and partnerships</p>
-              <a href="mailto:sales@zekvian.com" className="text-primary-600 hover:text-primary-700 font-semibold">
-                sales@zekvian.com
+              <a href="mailto:official.zekvian@gmail.com" className="text-primary-600 hover:text-primary-700 font-semibold">
+                official.zekvian@gmail.com
               </a>
               <p className="text-sm text-gray-500 mt-2">Response: 2 hours</p>
             </div>
@@ -83,8 +83,8 @@ const Contact = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Support Team</h3>
               <p className="text-gray-600 mb-4">Technical questions and support</p>
-              <a href="mailto:support@zekvian.com" className="text-accent-600 hover:text-accent-700 font-semibold">
-                support@zekvian.com
+              <a href="mailto:official.zekvian@gmail.com" className="text-accent-600 hover:text-accent-700 font-semibold">
+                official.zekvian@gmail.com
               </a>
               <p className="text-sm text-gray-500 mt-2">Response: 4 hours</p>
             </div>
