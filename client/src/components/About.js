@@ -47,7 +47,7 @@ const About = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50 py-20">
+    <section className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
       <div className="container-max">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent mb-6">
