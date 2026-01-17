@@ -4,6 +4,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { body, validationResult } = require('express-validator');
+const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
@@ -98,19 +99,101 @@ app.post('/api/contact', contactLimiter, validateContact, async (req, res) => {
       userAgent: req.get('User-Agent')
     });
 
-    await contact.save();
+    const savedContact = await contact.save();
+    const referenceId = savedContact._id.toString().slice(-6).toUpperCase();
 
-    // In a real application, you would send an email notification here
-    console.log('New contact form submission:', {
-      name,
-      email,
-      company,
-      timestamp: new Date().toISOString()
+    // Create transporter
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
     });
+
+    // Notification email to admin
+    const notificationEmail = {
+      from: `"Zekvian Contact" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      replyTo: email,
+      subject: `New Contact from ${name} - Zekvian`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #000;">
+          <div style="background: linear-gradient(135deg, #fbbf24, #f59e0b); padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
+            <h2 style="color: black; margin: 0;">NEW ZEKVIAN CONTACT SUBMISSION!</h2>
+          </div>
+          <div style="background: #1f2937; padding: 30px; border-radius: 10px; border: 1px solid #fbbf24;">
+            <p style="font-size: 16px; color: #fbbf24;"><strong>Reference ID:</strong> #${referenceId}</p>
+            <p style="font-size: 16px; color: #fff;"><strong>Name:</strong> ${name}</p>
+            <p style="font-size: 16px; color: #fff;"><strong>Email:</strong> ${email}</p>
+            <p style="font-size: 16px; color: #fff;"><strong>Company:</strong> ${company || 'Not provided'}</p>
+            <div style="background: #374151; padding: 20px; border-left: 4px solid #fbbf24; margin: 20px 0;">
+              <p style="margin: 0; color: #d1d5db;"><strong>Message:</strong> ${message}</p>
+            </div>
+          </div>
+        </div>
+      `,
+    };
+
+    // Reply email to sender
+    const replyEmail = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: 'Thank you for contacting Zekvian - Enterprise Automation Solutions',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #000;">
+          <div style="background: linear-gradient(135deg, #fbbf24, #f59e0b); padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
+            <h2 style="color: black; margin: 0;">Thank You for Contacting Zekvian!</h2>
+          </div>
+          <div style="background: #1f2937; padding: 30px; border-radius: 10px; border: 1px solid #fbbf24;">
+            <p style="font-size: 16px; color: #fff;">Dear <strong style="color: #fbbf24;">${name}</strong>,</p>
+            <p style="font-size: 16px; color: #d1d5db; line-height: 1.6;">Thank you for your interest in Zekvian's enterprise automation solutions! Your inquiry has been successfully received and assigned reference ID <strong style="color: #fbbf24;">#${referenceId}</strong>.</p>
+            <div style="background: #374151; padding: 20px; border-left: 4px solid #fbbf24; margin: 20px 0;">
+              <p style="margin: 0; font-style: italic; color: #d1d5db;">"${message}"</p>
+            </div>
+            <p style="font-size: 16px; color: #d1d5db; line-height: 1.6;">Our enterprise solutions team will review your requirements and provide a comprehensive response within <strong style="color: #fbbf24;">24 business hours</strong>. In the meantime, feel free to:</p>
+            <ul style="color: #d1d5db; line-height: 1.8;">
+              <li>Explore our automation platform features</li>
+              <li>Schedule a demo at your convenience</li>
+              <li>Contact our priority support at <strong style="color: #fbbf24;">+1-800-ZEKVIAN</strong></li>
+            </ul>
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #374151;">
+              <p style="margin: 0; color: #d1d5db;">Best regards,</p>
+              <p style="margin: 5px 0 0 0; font-weight: bold; color: #fbbf24;">The Zekvian Team</p>
+              <p style="margin: 0; color: #9ca3af; font-size: 14px;">Enterprise Automation Solutions</p>
+              <p style="margin: 0; color: #9ca3af; font-size: 14px;">🚀 Transforming Business Operations</p>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 20px; color: #6b7280; font-size: 12px;">
+            <p>This is an automated response. Please do not reply to this email.</p>
+          </div>
+        </div>
+      `,
+    };
+
+    try {
+      console.log('Verifying SMTP connection...');
+      await transporter.verify();
+      console.log('SMTP connection verified');
+      
+      console.log('Sending notification email...');
+      await transporter.sendMail(notificationEmail);
+      console.log('Notification email sent');
+      
+      console.log('Sending reply email...');
+      await transporter.sendMail(replyEmail);
+      console.log('Reply email sent');
+      
+      console.log('All emails sent successfully for contact:', referenceId);
+    } catch (emailError) {
+      console.error('Email sending failed:', emailError.message);
+      console.error('Full email error:', emailError);
+    }
 
     res.status(201).json({
       success: true,
-      message: 'Thank you for your message. We will get back to you soon!'
+      referenceId: referenceId,
+      message: `Dear ${name}, thank you for reaching out to Zekvian. Your inquiry has been successfully received and assigned reference ID #${referenceId}. Our enterprise solutions team will review your requirements and provide a comprehensive response within 24 business hours. Please check your email for confirmation.`
     });
 
   } catch (error) {

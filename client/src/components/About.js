@@ -4,39 +4,39 @@ import { Mail, Linkedin, Download } from 'lucide-react';
 const About = () => {
   const team = [
     {
-      name: 'Alex Thompson',
+      name: 'Loki',
       title: 'CEO & Founder',
       bio: 'Former VP of Engineering at major tech companies. 15+ years building scalable platforms.',
-      email: 'alex@zekvian.com',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face'
+      email: 'loki@zekvian.com',
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=face'
     },
     {
-      name: 'Sarah Kim',
+      name: 'Batman',
       title: 'CTO',
       bio: 'Ex-Google engineer with expertise in distributed systems and machine learning.',
-      email: 'sarah@zekvian.com',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face'
+      email: 'batman@zekvian.com',
+      image: 'https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=400&h=400&fit=crop&crop=face'
     },
     {
-      name: 'David Rodriguez',
+      name: 'Iron Man',
       title: 'VP of Product',
       bio: 'Product leader with 12+ years experience building enterprise software solutions.',
-      email: 'david@zekvian.com',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face'
+      email: 'ironman@zekvian.com',
+      image: 'https://images.unsplash.com/photo-1608889476561-6242cfdbf622?w=400&h=400&fit=crop&crop=face'
     },
     {
-      name: 'Lisa Chen',
+      name: 'Superman',
       title: 'Head of Design',
       bio: 'Award-winning designer focused on creating intuitive user experiences.',
-      email: 'lisa@zekvian.com',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face'
+      email: 'superman@zekvian.com',
+      image: 'https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=400&h=400&fit=crop&crop=face'
     },
     {
-      name: 'Michael Johnson',
+      name: 'Spider-Man',
       title: 'VP of Sales',
       bio: 'Sales leader with 10+ years driving revenue growth for enterprise software companies.',
-      email: 'michael@zekvian.com',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face'
+      email: 'spiderman@zekvian.com',
+      image: 'https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400&h=400&fit=crop&crop=face'
     }
   ];
 
@@ -262,7 +262,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-yellow-500 to-amber-600 p-12 rounded-3xl shadow-2xl text-black text-center">
+        {/* <div className="bg-gradient-to-r from-yellow-500 to-amber-600 p-12 rounded-3xl shadow-2xl text-black text-center">
           <h3 className="text-3xl font-bold mb-6">Join the <span className="text-black/80">Zekvian</span> Revolution</h3>
           <p className="text-xl mb-8 max-w-3xl mx-auto text-black/90">
             Ready to transform your business with intelligent automation? Join thousands of companies already using <span className="text-black font-semibold">Zekvian</span> to streamline their operations and accelerate growth.
@@ -275,7 +275,7 @@ const About = () => {
               Schedule Demo
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
