@@ -54,7 +54,7 @@ const Footer = ({ scrollToSection }) => {
               <div className="space-y-2 text-sm text-gray-400">
                 <div className="flex items-center space-x-2">
                   <MapPin size={16} />
-                  <span>San Francisco, CA</span>
+                  <span>Thiruvananthapuram , Kerala , India</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail size={16} />

@@ -10,6 +10,7 @@ import Legal from './components/Legal';
 import Security from './components/Security';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -56,6 +57,7 @@ function App() {
       </main>
       
       <Footer scrollToSection={scrollToSection} />
+      <Chatbot />
     </div>
   );
 }
