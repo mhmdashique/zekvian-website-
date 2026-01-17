@@ -103,28 +103,28 @@ const Legal = () => {
   };
 
   return (
-    <section className="section-padding bg-gradient-to-br from-accent-50 via-primary-50 to-rose-50">
+    <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-black">
       <div className="container-max">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Legal & Compliance
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            We're committed to transparency and compliance with all applicable laws and regulations for <span className="text-primary-600 font-semibold bg-primary-100 px-2 py-1 rounded">Zekvian</span>.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            We're committed to transparency and compliance with all applicable laws and regulations for <span className="text-yellow-400 font-semibold bg-yellow-500/20 px-2 py-1 rounded border border-yellow-500/30">Zekvian</span>.
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-white to-primary-50 rounded-lg shadow-sm overflow-hidden border border-primary-200">
-          <div className="border-b border-gray-200">
+        <div className="bg-gradient-to-br from-gray-800/80 to-black/80 border border-yellow-500/30 rounded-lg shadow-sm overflow-hidden">
+          <div className="border-b border-gray-600">
             <nav className="flex space-x-8 px-6" aria-label="Tabs">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${
+                  className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 transition-all duration-300 ${
                     activeTab === tab.id
-                      ? 'border-primary-500 text-primary-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                      ? 'border-yellow-500 text-yellow-400'
+                      : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-500'
                   }`}
                 >
                   <tab.icon size={18} />
@@ -136,10 +136,10 @@ const Legal = () => {
 
           <div className="p-6">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              <h3 className="text-2xl font-bold text-white mb-2">
                 {content[activeTab].title}
               </h3>
-              <div className="flex items-center text-sm text-gray-500">
+              <div className="flex items-center text-sm text-gray-400">
                 <Calendar size={16} className="mr-2" />
                 Last updated: {content[activeTab].lastUpdated}
               </div>
@@ -148,20 +148,20 @@ const Legal = () => {
             <div className="space-y-8">
               {content[activeTab].sections.map((section, index) => (
                 <div key={index}>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                  <h4 className="text-lg font-semibold text-white mb-3 hover:text-yellow-400 transition-colors">
                     {section.title}
                   </h4>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     {section.content}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 p-4 bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg border border-primary-200">
-              <p className="text-sm text-gray-600">
-                <strong>Questions about our legal policies?</strong> Contact our <span className="text-primary-600 font-semibold">Zekvian</span> legal team at{' '}
-                <a href="mailto:legal@zekvian.com" className="text-primary-600 hover:text-primary-700 font-semibold">
+            <div className="mt-8 p-4 bg-gradient-to-r from-yellow-500/10 to-amber-500/10 border border-yellow-500/30 rounded-lg">
+              <p className="text-sm text-gray-300">
+                <strong>Questions about our legal policies?</strong> Contact our <span className="text-yellow-400 font-semibold">Zekvian</span> legal team at{' '}
+                <a href="mailto:legal@zekvian.com" className="text-yellow-400 hover:text-yellow-300 font-semibold">
                   official.zekvian@gmail.com
                 </a>{' '}
                 for clarification or assistance.

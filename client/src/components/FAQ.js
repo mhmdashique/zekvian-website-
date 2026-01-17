@@ -78,14 +78,14 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary-50 via-accent-50 to-rose-50">
+    <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-black">
       <div className="container-max">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Find answers to common questions about <span className="text-primary-600 font-semibold bg-primary-100 px-2 py-1 rounded">Zekvian's</span> features, pricing, and implementation.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Find answers to common questions about <span className="text-yellow-400 font-semibold bg-yellow-500/20 px-2 py-1 rounded border border-yellow-500/30">Zekvian's</span> features, pricing, and implementation.
           </p>
         </div>
 
@@ -94,25 +94,25 @@ const FAQ = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-r from-white to-primary-50 rounded-lg shadow-sm border border-primary-200 overflow-hidden"
+                className="bg-gradient-to-r from-gray-800/80 to-black/80 border border-yellow-500/30 rounded-lg shadow-sm overflow-hidden"
               >
                 <button
                   onClick={() => toggleItem(index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-yellow-500/10 transition-colors"
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                  <h3 className="text-lg font-semibold text-white pr-4">
                     {faq.question}
                   </h3>
                   {openItems.has(index) ? (
-                    <ChevronUp size={20} className="text-gray-500 flex-shrink-0" />
+                    <ChevronUp size={20} className="text-yellow-400 flex-shrink-0" />
                   ) : (
-                    <ChevronDown size={20} className="text-gray-500 flex-shrink-0" />
+                    <ChevronDown size={20} className="text-gray-400 flex-shrink-0" />
                   )}
                 </button>
                 
                 {openItems.has(index) && (
                   <div className="px-6 pb-4">
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -122,21 +122,21 @@ const FAQ = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="bg-gradient-to-br from-white to-primary-50 p-8 rounded-lg shadow-sm border border-primary-200">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            <div className="bg-gradient-to-br from-gray-800/80 to-black/80 border border-yellow-500/30 p-8 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-white mb-4">
                 Still have questions?
               </h3>
-              <p className="text-gray-600 mb-6">
-                Can't find the answer you're looking for? Our <span className="text-primary-600 font-semibold">Zekvian</span> support team is here to help.
+              <p className="text-gray-300 mb-6">
+                Can't find the answer you're looking for? Our <span className="text-yellow-400 font-semibold">Zekvian</span> support team is here to help.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="mailto:support@zekvian.com"
-                  className="btn-primary"
+                  className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
                 >
                   Contact Support
                 </a>
-                <button className="btn-secondary">
+                <button className="border-2 border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-200">
                   Schedule a Call
                 </button>
               </div>

@@ -28,19 +28,19 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-white via-primary-50 to-primary-100">
+    <section className="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-800">
       <div className="container-max">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
-            Join thousands of companies that trust <span className="text-primary-600 font-semibold bg-primary-100 px-2 py-1 rounded">Zekvian</span> to power their growth.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
+            Join thousands of companies that trust <span className="text-yellow-400 font-semibold bg-yellow-500/20 px-2 py-1 rounded border border-yellow-500/30">Zekvian</span> to power their growth.
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-8 mb-16 opacity-60">
             {companies.map((company, index) => (
-              <div key={index} className="text-2xl font-bold text-gray-400">
+              <div key={index} className="text-2xl font-bold text-gray-500">
                 {company}
               </div>
             ))}
@@ -51,11 +51,11 @@ const SocialProof = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-white to-primary-50 p-6 rounded-lg relative hover:shadow-lg transition-shadow duration-300 border border-primary-100"
+              className="bg-gradient-to-br from-gray-800/80 to-black/80 border border-yellow-500/30 p-6 rounded-lg relative hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300"
             >
-              <Quote size={24} className="text-primary-600 mb-4" />
+              <Quote size={24} className="text-yellow-400 mb-4" />
               
-              <p className="text-gray-700 mb-6 italic">
+              <p className="text-gray-300 mb-6 italic">
                 "{testimonial.content}"
               </p>
               
@@ -66,8 +66,8 @@ const SocialProof = () => {
               </div>
               
               <div>
-                <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                <p className="text-sm text-gray-600">{testimonial.title}</p>
+                <p className="font-semibold text-white">{testimonial.name}</p>
+                <p className="text-sm text-gray-400">{testimonial.title}</p>
               </div>
             </div>
           ))}

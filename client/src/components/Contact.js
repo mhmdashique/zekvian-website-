@@ -49,67 +49,67 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50 py-20">
+    <section className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black py-20">
       <div className="container-max">
         <div className="text-center mb-20">
-          <div className="inline-block p-2 bg-primary-100 rounded-full mb-6">
-            <Mail className="text-primary-600" size={32} />
+          <div className="inline-block p-2 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 border border-yellow-500/30 rounded-full mb-6">
+            <Mail className="text-yellow-400" size={32} />
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent mb-6">
             Let's Connect
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Transform your vision into reality. Our team is ready to discuss how Zekvian can revolutionize your business operations.
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white/70 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6">
-                <Mail className="text-white" size={28} />
+            <div className="bg-gradient-to-br from-gray-800/80 to-black/80 border border-yellow-500/30 p-8 rounded-3xl shadow-xl hover:shadow-yellow-500/20 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-amber-600 rounded-2xl flex items-center justify-center mb-6">
+                <Mail className="text-black" size={28} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Sales Team</h3>
-              <p className="text-gray-600 mb-4">For demos, pricing, and partnerships</p>
-              <a href="mailto:official.zekvian@gmail.com" className="text-primary-600 hover:text-primary-700 font-semibold">
+              <h3 className="text-xl font-bold text-white mb-4">Sales Team</h3>
+              <p className="text-gray-300 mb-4">For demos, pricing, and partnerships</p>
+              <a href="mailto:official.zekvian@gmail.com" className="text-yellow-400 hover:text-yellow-300 font-semibold">
                 official.zekvian@gmail.com
               </a>
-              <p className="text-sm text-gray-500 mt-2">Response: 2 hours</p>
+              <p className="text-sm text-gray-400 mt-2">Response: 2 hours</p>
             </div>
 
-            <div className="bg-white/70 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-gradient-to-r from-accent-500 to-accent-600 rounded-2xl flex items-center justify-center mb-6">
-                <Phone className="text-white" size={28} />
+            <div className="bg-gradient-to-br from-gray-800/80 to-black/80 border border-yellow-500/30 p-8 rounded-3xl shadow-xl hover:shadow-yellow-500/20 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-2xl flex items-center justify-center mb-6">
+                <Phone className="text-black" size={28} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Support Team</h3>
-              <p className="text-gray-600 mb-4">Technical questions and support</p>
-              <a href="mailto:official.zekvian@gmail.com" className="text-accent-600 hover:text-accent-700 font-semibold">
+              <h3 className="text-xl font-bold text-white mb-4">Support Team</h3>
+              <p className="text-gray-300 mb-4">Technical questions and support</p>
+              <a href="mailto:official.zekvian@gmail.com" className="text-amber-400 hover:text-amber-300 font-semibold">
                 official.zekvian@gmail.com
               </a>
-              <p className="text-sm text-gray-500 mt-2">Response: 4 hours</p>
+              <p className="text-sm text-gray-400 mt-2">Response: 4 hours</p>
             </div>
 
-            <div className="bg-gradient-to-br from-primary-500 to-accent-500 p-8 rounded-3xl shadow-xl text-white hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
-                <Calendar className="text-white" size={28} />
+            <div className="bg-gradient-to-br from-yellow-500 to-amber-600 p-8 rounded-3xl shadow-xl text-black hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-black/20 rounded-2xl flex items-center justify-center mb-6">
+                <Calendar className="text-black" size={28} />
               </div>
               <h3 className="text-xl font-bold mb-4">Schedule Demo</h3>
               <p className="mb-6 opacity-90">Book a personalized demo session</p>
-              <button className="w-full bg-white text-primary-600 font-semibold py-3 px-6 rounded-xl hover:bg-gray-100 transition-colors">
+              <button className="w-full bg-black text-yellow-400 font-semibold py-3 px-6 rounded-xl hover:bg-gray-800 transition-colors">
                 Book Now
               </button>
             </div>
           </div>
-          <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-2xl border border-white/50">
+          <div className="bg-gradient-to-br from-gray-800/80 to-black/80 border border-yellow-500/30 p-10 rounded-3xl shadow-2xl">
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Send us a Message</h3>
-              <p className="text-gray-600">Fill out the form below and we'll get back to you within 24 hours</p>
+              <h3 className="text-3xl font-bold text-white mb-4">Send us a Message</h3>
+              <p className="text-gray-300">Fill out the form below and we'll get back to you within 24 hours</p>
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-800 mb-3">
+                  <label htmlFor="name" className="block text-sm font-semibold text-yellow-400 mb-3">
                     Full Name *
                   </label>
                   <input
@@ -119,13 +119,13 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary-100 focus:border-primary-500 transition-all placeholder-gray-500"
+                    className="w-full px-6 py-4 bg-gray-700 border-2 border-gray-600 text-white rounded-2xl focus:ring-4 focus:ring-yellow-500/20 focus:border-yellow-500 transition-all placeholder-gray-400"
                     placeholder="John Doe"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-800 mb-3">
+                  <label htmlFor="email" className="block text-sm font-semibold text-yellow-400 mb-3">
                     Email Address *
                   </label>
                   <input
@@ -135,14 +135,14 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary-100 focus:border-primary-500 transition-all placeholder-gray-500"
+                    className="w-full px-6 py-4 bg-gray-700 border-2 border-gray-600 text-white rounded-2xl focus:ring-4 focus:ring-yellow-500/20 focus:border-yellow-500 transition-all placeholder-gray-400"
                     placeholder="john@company.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="company" className="block text-sm font-semibold text-gray-800 mb-3">
+                <label htmlFor="company" className="block text-sm font-semibold text-yellow-400 mb-3">
                   Company Name
                 </label>
                 <input
@@ -151,13 +151,13 @@ const Contact = () => {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-6 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary-100 focus:border-primary-500 transition-all placeholder-gray-500"
+                  className="w-full px-6 py-4 bg-gray-700 border-2 border-gray-600 text-white rounded-2xl focus:ring-4 focus:ring-yellow-500/20 focus:border-yellow-500 transition-all placeholder-gray-400"
                   placeholder="Your Company Inc."
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-800 mb-3">
+                <label htmlFor="message" className="block text-sm font-semibold text-yellow-400 mb-3">
                   Message *
                 </label>
                 <textarea
@@ -167,7 +167,7 @@ const Contact = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-6 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary-100 focus:border-primary-500 transition-all resize-none placeholder-gray-500"
+                  className="w-full px-6 py-4 bg-gray-700 border-2 border-gray-600 text-white rounded-2xl focus:ring-4 focus:ring-yellow-500/20 focus:border-yellow-500 transition-all resize-none placeholder-gray-400"
                   placeholder="Tell us about your project and how we can help transform your business..."
                 />
               </div>
@@ -175,11 +175,11 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 text-white font-bold py-5 px-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black font-bold py-5 px-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-black"></div>
                     <span className="text-lg">Sending...</span>
                   </>
                 ) : (
@@ -213,15 +213,15 @@ const Contact = () => {
               )}
             </form>
             
-            <div className="mt-8 pt-8 border-t border-gray-200 flex items-center justify-center gap-4 text-sm text-gray-500">
+            <div className="mt-8 pt-8 border-t border-gray-600 flex items-center justify-center gap-4 text-sm text-gray-400">
               <Clock size={16} />
               <span>Business hours: 9 AM - 6 PM IST</span>
               <div className={`w-2 h-2 rounded-full ${
-                serverStatus === 'online' ? 'bg-green-500' : 
-                serverStatus === 'offline' ? 'bg-red-500' : 'bg-yellow-500'
+                serverStatus === 'online' ? 'bg-yellow-400' : 
+                serverStatus === 'offline' ? 'bg-red-500' : 'bg-amber-500'
               }`}></div>
-              <span className={serverStatus === 'online' ? 'text-green-600' : 
-                serverStatus === 'offline' ? 'text-red-600' : 'text-yellow-600'}>
+              <span className={serverStatus === 'online' ? 'text-yellow-400' : 
+                serverStatus === 'offline' ? 'text-red-400' : 'text-amber-400'}>
                 Server {serverStatus === 'online' ? 'Online' : 
                   serverStatus === 'offline' ? 'Offline' : 'Checking...'}
               </span>
