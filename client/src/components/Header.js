@@ -19,7 +19,6 @@ const Header = ({ activeSection, scrollToSection }) => {
     { name: 'Contact', id: 'contact' },
     { name: 'Legal', id: 'legal' },
     { name: 'Security', id: 'security' },
-    { name: 'FAQ', id: 'faq' },
   ];
 
   return (

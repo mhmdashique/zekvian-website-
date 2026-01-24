@@ -3,16 +3,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
+import AutomationDashboard from './components/AutomationDashboard';
 import HowItWorks from './components/HowItWorks';
 import SocialProof from './components/SocialProof';
 import About from './components/About';
 import Contact from './components/Contact';
 import Legal from './components/Legal';
 import Security from './components/Security';
-import FAQ from './components/FAQ';
+import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
 import AdminApp from './components/AdminApp';
+import FAQ from './components/FAQ';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -33,6 +35,7 @@ function App() {
         <section id="home">
           <Hero scrollToSection={scrollToSection} />
           <Features />
+          <AutomationDashboard />
           <HowItWorks />
           <SocialProof />
         </section>
@@ -52,12 +55,9 @@ function App() {
         <section id="security">
           <Security />
         </section>
-        
-        <section id="faq">
-          <FAQ />
-        </section>
       </main>
       
+      <FAQSection />
       <Footer scrollToSection={scrollToSection} />
       <Chatbot />
     </div>
@@ -68,6 +68,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainWebsite />} />
         <Route path="/admin" element={<AdminApp />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
     </Router>
   );

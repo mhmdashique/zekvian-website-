@@ -19,7 +19,8 @@ const Footer = ({ scrollToSection }) => {
       { name: 'Help Center', href: '#' },
       { name: 'Contact', action: () => scrollToSection('contact') },
       { name: 'Status', action: () => scrollToSection('security') },
-      { name: 'FAQ', action: () => scrollToSection('faq') }
+      { name: 'FAQ', action: () => window.location.href = '/faq' },
+      { name: 'Documentation', href: '#' }
     ],
     legal: [
       { name: 'Privacy', action: () => scrollToSection('legal') },

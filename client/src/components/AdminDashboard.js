@@ -409,20 +409,15 @@ const AdminDashboard = ({ onLogout }) => {
                     
                     <div className="space-y-4">
                       <h4 className={`font-medium ${theme.text} mb-3`}>Quick Actions</h4>
-                      <button className="w-full flex items-center space-x-3 p-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-lg transition-all duration-300">
-                        <Mail size={16} />
-                        <span className="text-sm">Send Bulk Email</span>
-                      </button>
-                      <button className="w-full flex items-center space-x-3 p-3 bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white rounded-lg transition-all duration-300">
-                        <Download size={16} />
-                        <span className="text-sm">Export Analytics</span>
-                      </button>
-                      <button className="w-full flex items-center space-x-3 p-3 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white rounded-lg transition-all duration-300">
-                        <BarChart3 size={16} />
-                        <span className="text-sm">Generate Report</span>
-                      </button>
-                      <div className={`${theme.hover} rounded-lg p-3 text-center`}>
-                        <p className={`text-xs ${theme.textSecondary}`}>💡 Tip: Use keyboard shortcuts Ctrl+R to refresh data</p>
+                      <div className="grid grid-cols-2 gap-3">
+                        <button className="flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-3 rounded-lg transition-all duration-300">
+                          <Plus size={16} />
+                          <span className="text-sm">New Contact</span>
+                        </button>
+                        <button className="flex items-center justify-center space-x-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-4 py-3 rounded-lg transition-all duration-300">
+                          <Mail size={16} />
+                          <span className="text-sm">Send Email</span>
+                        </button>
                       </div>
                     </div>
                   </div>

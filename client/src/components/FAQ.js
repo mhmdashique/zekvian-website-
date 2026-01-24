@@ -1,150 +1,144 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, ArrowLeft, HelpCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const FAQ = () => {
-  const [openItems, setOpenItems] = useState(new Set([0]));
+  const navigate = useNavigate();
+  const [openItems, setOpenItems] = useState({});
 
   const toggleItem = (index) => {
-    const newOpenItems = new Set(openItems);
-    if (newOpenItems.has(index)) {
-      newOpenItems.delete(index);
-    } else {
-      newOpenItems.add(index);
-    }
-    setOpenItems(newOpenItems);
+    setOpenItems(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
   };
 
-  const faqs = [
+  const faqData = [
     {
-      question: 'What are the multi-tenant limits and capabilities?',
-      answer: 'Our platform supports unlimited tenants with isolated data and customizable resource allocation. Each tenant can have up to 10,000 users, 1TB storage, and custom branding. Enterprise plans offer unlimited scaling.'
+      question: "What is Zekvian's automation platform?",
+      answer: "Zekvian is an intelligent automation platform that helps businesses streamline their operations through AI-powered workflows, reducing manual tasks and increasing efficiency by up to 80%."
     },
     {
-      question: 'How does pricing work and what payment options are available?',
-      answer: 'We offer flexible pricing tiers starting at $29/month for small teams up to $299/month for enterprise. Annual billing provides 20% discount. We accept all major credit cards, ACH transfers, and can accommodate purchase orders for enterprise clients.'
+      question: "How quickly can I implement Zekvian in my business?",
+      answer: "Most businesses can get started with Zekvian within 24-48 hours. Our team provides comprehensive onboarding, and basic workflows can be set up in minutes using our intuitive drag-and-drop interface."
     },
     {
-      question: 'What customization options are available?',
-      answer: 'Extensive customization including custom workflows, branded interfaces, API integrations, custom fields, and white-label options. Our Professional Services team can help with advanced customizations and integrations.'
+      question: "What types of processes can be automated?",
+      answer: "Zekvian can automate a wide range of processes including data entry, email marketing, customer onboarding, report generation, inventory management, invoice processing, and much more."
     },
     {
-      question: 'How does data portability work if I want to leave?',
-      answer: 'You own your data completely. We provide full data export in standard formats (JSON, CSV, XML) at any time. No lock-in periods or export fees. We also offer migration assistance to help transfer to other platforms.'
+      question: "Is my data secure with Zekvian?",
+      answer: "Absolutely. We use enterprise-grade security with 256-bit encryption, SOC 2 compliance, and regular security audits. Your data is stored in secure, geographically distributed data centers."
     },
     {
-      question: 'What is your Service Level Agreement (SLA)?',
-      answer: 'We guarantee 99.9% uptime with automatic failover. Response times: Critical issues within 1 hour, high priority within 4 hours, standard within 24 hours. Service credits provided for SLA breaches.'
+      question: "Do I need technical knowledge to use Zekvian?",
+      answer: "No technical knowledge is required. Our platform is designed for business users with an intuitive interface. However, we also provide advanced features for technical teams who want more customization."
     },
     {
-      question: 'What integration capabilities do you offer?',
-      answer: 'REST APIs, webhooks, Zapier integration, and pre-built connectors for Salesforce, HubSpot, Slack, Microsoft 365, Google Workspace, and 200+ other applications. Custom integrations available through our Professional Services.'
+      question: "What kind of support do you provide?",
+      answer: "We offer 24/7 customer support, comprehensive documentation, video tutorials, and dedicated account managers for enterprise clients. Our support team has an average response time of under 2 hours."
     },
     {
-      question: 'What are the technical requirements?',
-      answer: 'Cloud-based solution requiring only a modern web browser (Chrome, Firefox, Safari, Edge). Mobile apps available for iOS and Android. No on-premise installation required. API access for custom integrations.'
+      question: "Can Zekvian integrate with my existing tools?",
+      answer: "Yes, Zekvian integrates with over 500+ popular business tools including Salesforce, HubSpot, Slack, Microsoft Office, Google Workspace, and many more through our API and pre-built connectors."
     },
     {
-      question: 'How do you handle security and compliance?',
-      answer: 'SOC 2 Type II certified, GDPR compliant, HIPAA ready. End-to-end encryption, role-based access control, SSO support, and regular security audits. Data hosted in secure, certified data centers.'
+      question: "What are your pricing plans?",
+      answer: "We offer flexible pricing plans starting from $29/month for small businesses, with enterprise plans available. All plans include core automation features, with advanced features and higher limits in premium tiers."
     },
     {
-      question: 'How do I manage user accounts and permissions?',
-      answer: 'Comprehensive admin dashboard for user management, role-based permissions, team organization, and access controls. Support for SSO, SCIM provisioning, and automated user lifecycle management.'
+      question: "Can I try Zekvian before purchasing?",
+      answer: "Yes! We offer a 14-day free trial with full access to all features. No credit card required to start, and you can upgrade anytime during or after the trial period."
     },
     {
-      question: 'What support options are available?',
-      answer: 'Email support for all plans, priority support for Pro+, phone support for Enterprise. Comprehensive documentation, video tutorials, webinar training, and dedicated customer success managers for Enterprise clients.'
-    },
-    {
-      question: 'Can I try the platform before purchasing?',
-      answer: 'Yes! 14-day free trial with full feature access, no credit card required. We also offer personalized demos and sandbox environments for testing with your own data.'
-    },
-    {
-      question: 'How do you handle data backup and disaster recovery?',
-      answer: 'Automated daily backups with 30-day retention, geo-redundant storage across multiple data centers, and 4-hour Recovery Time Objective (RTO) with 1-hour Recovery Point Objective (RPO) for Enterprise plans.'
-    },
-    {
-      question: 'What happens during planned maintenance?',
-      answer: 'Maintenance windows are scheduled during low-usage periods (typically weekends) with 48-hour advance notice. Most updates are deployed with zero downtime using blue-green deployment strategies.'
-    },
-    {
-      question: 'Do you offer training and onboarding?',
-      answer: 'Comprehensive onboarding program including guided setup, training sessions, documentation, and video tutorials. Enterprise clients receive dedicated onboarding specialists and custom training programs.'
-    },
-    {
-      question: 'How do you handle feature requests and product updates?',
-      answer: 'Regular product updates every 2 weeks, public roadmap, customer feedback portal, and quarterly feature planning sessions with key customers. Enterprise clients can influence roadmap priorities.'
+      question: "How does Zekvian ensure automation reliability?",
+      answer: "Our platform includes built-in error handling, automatic retries, monitoring dashboards, and alert systems. We maintain 99.9% uptime and provide detailed logs for all automation activities."
     }
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-black">
-      <div className="container-max">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Find answers to common questions about <span className="text-yellow-400 font-semibold bg-yellow-500/20 px-2 py-1 rounded border border-yellow-500/30">Zekvian's</span> features, pricing, and implementation.
-          </p>
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      {/* Header */}
+      <div className="bg-gray-900/50 backdrop-blur-sm border-b border-yellow-500/20">
+        <div className="container mx-auto px-6 py-6">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={() => navigate('/')}
+              className="flex items-center space-x-3 text-yellow-400 hover:text-yellow-300 transition-colors"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              <span className="font-medium">Back to Home</span>
+            </button>
+            <div className="flex items-center space-x-3">
+              <HelpCircle className="w-8 h-8 text-yellow-400" />
+              <h1 className="text-2xl font-bold text-white">Frequently Asked Questions</h1>
+            </div>
+          </div>
         </div>
+      </div>
 
+      {/* FAQ Content */}
+      <div className="container mx-auto px-6 py-16">
         <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Got Questions?
+              <span className="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent"> We've Got Answers</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Find answers to the most common questions about Zekvian's automation platform
+            </p>
+          </div>
+
           <div className="space-y-4">
-            {faqs.map((faq, index) => (
+            {faqData.map((item, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-r from-gray-800/80 to-black/80 border border-yellow-500/30 rounded-lg shadow-sm overflow-hidden"
+                className="bg-gray-800/50 backdrop-blur-sm border border-yellow-500/20 rounded-xl overflow-hidden hover:border-yellow-500/40 transition-all duration-300"
               >
                 <button
                   onClick={() => toggleItem(index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-yellow-500/10 transition-colors"
+                  className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-700/30 transition-colors"
                 >
-                  <h3 className="text-lg font-semibold text-white pr-4">
-                    {faq.question}
-                  </h3>
-                  {openItems.has(index) ? (
-                    <ChevronUp size={20} className="text-yellow-400 flex-shrink-0" />
-                  ) : (
-                    <ChevronDown size={20} className="text-gray-400 flex-shrink-0" />
-                  )}
+                  <h3 className="text-lg font-semibold text-white pr-4">{item.question}</h3>
+                  <div className="flex-shrink-0">
+                    {openItems[index] ? (
+                      <ChevronUp className="w-5 h-5 text-yellow-400" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-yellow-400" />
+                    )}
+                  </div>
                 </button>
                 
-                {openItems.has(index) && (
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-300 leading-relaxed">
-                      {faq.answer}
-                    </p>
+                {openItems[index] && (
+                  <div className="px-6 pb-6 border-t border-gray-700/50">
+                    <div className="pt-4">
+                      <p className="text-gray-300 leading-relaxed">{item.answer}</p>
+                    </div>
                   </div>
                 )}
               </div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <div className="bg-gradient-to-br from-gray-800/80 to-black/80 border border-yellow-500/30 p-8 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-white mb-4">
-                Still have questions?
-              </h3>
+          {/* Contact Section */}
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-r from-yellow-500/10 to-amber-500/10 border border-yellow-500/20 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-white mb-4">Still have questions?</h3>
               <p className="text-gray-300 mb-6">
-                Can't find the answer you're looking for? Our <span className="text-yellow-400 font-semibold">Zekvian</span> support team is here to help.
+                Can't find what you're looking for? Our support team is here to help.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="mailto:official.zekvian@gmail.com"
-                  className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-                >
-                  Contact Support
-                </a>
-                {/* <button className="border-2 border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-200">
-                  Schedule a Call
-                </button> */}
-              </div>
+              <button
+                onClick={() => navigate('/#contact')}
+                className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-black font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/30"
+              >
+                Contact Support
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
